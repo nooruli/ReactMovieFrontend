@@ -26,8 +26,8 @@ class App extends React.Component {
   }
   componentDidMount() {
     // To fetch the trending movies
-    //fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=53d7e674926499a485a2f6bed92cdedb')
-    fetch('https://moviebacknode.herokuapp.com/')
+    //fetch('https://moviebacknode.herokuapp.com/')
+    fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=53d7e674926499a485a2f6bed92cdedb')
       .then(res => res.json())
       .then(res => {
         console.log("=======>",res)
