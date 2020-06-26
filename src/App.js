@@ -26,8 +26,7 @@ class App extends React.Component {
   }
   componentDidMount() {
     // To fetch the trending movies
-    //fetch('https://moviebacknode.herokuapp.com/')
-    fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=53d7e674926499a485a2f6bed92cdedb')
+    fetch('https://moviebacknode.herokuapp.com/')
       .then(res => res.json())
       .then(res => {
         console.log("=======>",res)
@@ -44,7 +43,7 @@ class App extends React.Component {
   }
   handleSearchClick = () => {
     console.log(this.state.search)
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=53d7e674926499a485a2f6bed92cdedb&query=${this.state.searchValue}`)
+    fetch(`https://moviebacknode.herokuapp.com/search/${this.state.searchValue}`)
       .then(res => res.json())
       .then(res => {
         this.setState({ search: res.results, searchProcess: true })
