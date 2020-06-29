@@ -8,10 +8,10 @@ export default class favourite extends React.Component {
         }
     }
     componentDidMount() {
-        fetch('http://localhost:8080/Getallmovies')
+        fetch('https://moviebacknode.herokuapp.com/getfav')
             .then(res => res.json())
             .then(res => {
-                this.setState({ data: res.data })
+                this.setState({ data: res })
             })
     }
     handleRemoveFavrouite = (id) => { 
