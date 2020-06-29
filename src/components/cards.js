@@ -17,7 +17,7 @@ export default class MediaCard extends React.Component {
   }
 
   handleAddToFavrouite = (id) => {
-    fetch(`http://localhost:8080/${id}?api_key=8b5e3a87ebe14efb138bc4772c8b722c`, {
+    fetch(`https://moviebacknode.herokuapp.com/addfav/${id}`, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, cors, *same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -30,14 +30,14 @@ export default class MediaCard extends React.Component {
       referrer: 'no-referrer', // no-referrer, *client
       body: JSON.stringify(id), // body data type must match "Content-Type" header
     })
-      .then(response => response.json()) // parses JSON response into native JavaScript objects 
+     // .then(response => response.json()) // parses JSON response into native JavaScript objects 
       .then(response => {
-        alert("Added to Favourite")
+        alert(`${id}`)
       })
   }
   handleRemoveFavrouite = (id) => {
     // To delete the element from favourite 
-    fetch(`http://localhost:8080/${id}`, {
+    fetch(`https://moviebacknode.herokuapp.com/delfav/${id}`, {
       method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, cors, *same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -50,7 +50,7 @@ export default class MediaCard extends React.Component {
       referrer: 'no-referrer', // no-referrer, *client
       body: JSON.stringify(id), // body data type must match "Content-Type" header
     })
-      .then(response => response.json()) // parses JSON response into native JavaScript objects 
+      //.then(response => response.json()) // parses JSON response into native JavaScript objects 
       .then(response => {
 
         alert("Removed from Favourite")
