@@ -18,7 +18,7 @@ class App extends React.Component {
   }
   componentWillMount() {
     // To fetch the favourite list
-    fetch('http://localhost:8080/Getallmovies')
+    fetch('https://moviebacknode.herokuapp.com/getfav')
       .then(res => res.json())
       .then(res => {
         this.setState({ favouriteList: res.data })
