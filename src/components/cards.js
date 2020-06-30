@@ -39,7 +39,7 @@ export default class MediaCard extends React.Component {
     const { favouriteList } = this.props
     return (
       this.props.movieData ?
-        <Card style={{ maxWidth: '345px', margin: 10, padding: 20 }}>
+        <Card style={{ maxWidth: '345px', margin: 10, padding: 20 ,background:'#d6c6bc' }}>
           <CardActionArea>
             <CardMedia
               style={{ height: '140px' }}
