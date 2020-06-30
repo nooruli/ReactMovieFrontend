@@ -88,7 +88,7 @@ render() {
           // Searched Movies
           <div>
             <Typography variant="h6" style={{ textAlign: "center", paddingTop: 20 }}>Searched Movies</Typography>
-            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' ,background:'#2c2d30' }}>
               {
                 this.state.search.map(movieData => {
                  // return data.results.map(movieData => {
@@ -102,7 +102,7 @@ render() {
           // Trending Movies
           <div>
             <Typography variant="h6" style={{ textAlign: "center", paddingTop: 20 }}>Trending Movies</Typography>
-            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' ,  background : 'pink'}}>
+            <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' ,  background : '#4a67c7'}}>
               {
                 (this.state.trendingMovies&&this.state.trendingMovies.length) ?
                   this.state.trendingMovies && this.state.trendingMovies.length ?
