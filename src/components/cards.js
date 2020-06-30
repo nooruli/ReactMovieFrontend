@@ -17,43 +17,19 @@ export default class MediaCard extends React.Component {
   }
 
   handleAddToFavrouite = (id) => {
-    fetch(`https://moviebacknode.herokuapp.com/addfav/${id}`, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, cors, *same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: 'follow', // manual, *follow, error
-      referrer: 'no-referrer', // no-referrer, *client
-      body: JSON.stringify(id), // body data type must match "Content-Type" header
-    })
-     // .then(response => response.json()) // parses JSON response into native JavaScript objects 
+    fetch(`https://moviebacknode.herokuapp.com/addfav/${id}`)
+    // then(response => response.json()) // parses JSON response into native JavaScript objects 
       .then(response => {
-        alert(`${id}`)
+        alert(`Added to favourites. Movie ID is ${id}`)
       })
   }
   handleRemoveFavrouite = (id) => {
     // To delete the element from favourite 
-    fetch(`https://moviebacknode.herokuapp.com/delfav/${id}`, {
-      method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, cors, *same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: 'follow', // manual, *follow, error
-      referrer: 'no-referrer', // no-referrer, *client
-      body: JSON.stringify(id), // body data type must match "Content-Type" header
-    })
+    fetch(`https://moviebacknode.herokuapp.com/delfav/${id}`)
       //.then(response => response.json()) // parses JSON response into native JavaScript objects 
       .then(response => {
 
-        alert("Removed from Favourite")
+        alert("Removed from Favourite ")
         // Locally removing the element from favourite
       })
   }
